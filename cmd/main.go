@@ -33,10 +33,8 @@ func main() {
 		Cache:      autocert.DirCache("certs"),
 	}
 
-	DefaultAddr := "443"
-
 	s := &goHttp.Server{
-		Addr:         DefaultAddr,
+		Addr:         ":https",
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 5 * time.Second,
 		TLSConfig: &tls.Config{
