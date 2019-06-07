@@ -17,7 +17,7 @@ type Handler struct {
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// Implement middleware here
 	h.TaskHandler.Logger.Printf("%s %s %s", r.Proto, r.Method, r.URL.Path)
-	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+	w.Header().Set("Access-Control-Allow-Origin", "https://www.mattkennedy.io")
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, PATCH, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
