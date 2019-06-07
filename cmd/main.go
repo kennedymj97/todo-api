@@ -1,10 +1,14 @@
 package main
 
 import (
+	"crypto/tls"
 	"log"
+	goHttp "net/http"
+	"time"
 
 	"github.com/kennedymj97/todo-api/http"
 	"github.com/kennedymj97/todo-api/postgres"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 func main() {
@@ -23,7 +27,25 @@ func main() {
 	userHandler.UserService = dbClient.UserService()
 
 	// Create new server
-	s := http.InitServer()
+	certManager := autocert.Manager{
+		Prompt:     autocert.AcceptTOS,
+		HostPolicy: autocert.HostWhitelist("api.mattkennedy.io"),
+		Cache:      autocert.DirCache("certs"),
+	}
+
+	DefaultAddr := "443"
+
+	s := &goHttp.Server{
+		Addr:         DefaultAddr,
+		ReadTimeout:  5 * time.Second,
+		WriteTimeout: 5 * time.Second,
+		TLSConfig: &tls.Config{
+			GetCertificate: certManager.GetCertificate,
+		},
+	}
 	s.Handler = &http.Handler{TaskHandler: taskHandler, UserHandler: userHandler}
-	log.Fatal(s.ListenAndServe())
+
+	go goHttp.ListenAndServe(":http", certManager.HTTPHandler(nil))
+
+	log.Fatal(s.ListenAndServeTLS("", ""))
 }
