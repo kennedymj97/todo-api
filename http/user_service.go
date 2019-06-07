@@ -10,7 +10,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/julienschmidt/httprouter"
-	"github.com/kennedymj97/test/todo"
+	"github.com/kennedymj97/todo-api"
 	"golang.org/x/crypto/bcrypt"
 )
 

@@ -1,7 +1,7 @@
 package postgres
 
 import (
-	"github.com/kennedymj97/test/todo"
+	"github.com/kennedymj97/todo-api"
 )
 
 var _ todo.TaskService = &TaskService{}

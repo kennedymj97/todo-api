@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/joho/godotenv"
-	"github.com/kennedymj97/test/todo"
+	"github.com/kennedymj97/todo-api"
 	_ "github.com/lib/pq"
 )
 

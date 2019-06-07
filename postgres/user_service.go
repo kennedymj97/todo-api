@@ -1,7 +1,7 @@
 package postgres
 
 import (
-	"github.com/kennedymj97/test/todo"
+	"github.com/kennedymj97/todo-api"
 	"github.com/lib/pq"
 )
 

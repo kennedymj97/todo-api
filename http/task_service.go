@@ -9,7 +9,7 @@ import (
 	"sort"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/kennedymj97/test/todo"
+	"github.com/kennedymj97/todo-api"
 )
 
 type TaskHandler struct {

@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/kennedymj97/test/todo/http"
-	"github.com/kennedymj97/test/todo/postgres"
+	"github.com/kennedymj97/todo-api/http"
+	"github.com/kennedymj97/todo-api/postgres"
 )
 
 func main() {

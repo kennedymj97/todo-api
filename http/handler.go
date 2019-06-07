@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/kennedymj97/test/todo"
+	"github.com/kennedymj97/todo-api"
 )
 
 type Handler struct {
