@@ -127,7 +127,7 @@ func (h *UserHandler) handleLogout(w http.ResponseWriter, r *http.Request, _ htt
 			Value:    "",
 			HttpOnly: true,
 			Expires:  time.Now(),
-			Path:     "/api/",
+			Path:     "/",
 			Domain:   r.Host,
 		}
 		http.SetCookie(w, sessionCookie)
