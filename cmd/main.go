@@ -25,5 +25,5 @@ func main() {
 	s := http.InitServer()
 	s.Handler = &http.Handler{TaskHandler: taskHandler, UserHandler: userHandler}
 
-	log.Fatal(s.ListenAndServeTLS("/etc/letsencrypt/live/api.mattkennedy.io/fullchain.pem", "/etc/letsencrypt/live/api.mattkennedy.io/privkey.pem"))
+	log.Fatal(s.ListenAndServe())
 }

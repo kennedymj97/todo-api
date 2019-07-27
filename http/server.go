@@ -7,7 +7,7 @@ import (
 
 func InitServer() *http.Server {
 	s := &http.Server{
-		Addr:         ":https",
+		Addr:         ":8080",
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 5 * time.Second,
 	}
